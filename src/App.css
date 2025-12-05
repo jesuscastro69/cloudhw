@@ -521,3 +521,182 @@ body {
   color: var(--color-texto-secundario);
   font-weight: 500; 
 }
+
+/* --- ESTILOS DEL CALENDARIO --- */
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  grid-column: 1 / -1;
+}
+
+.calendar-header h2 {
+  margin: 0;
+  color: var(--color-primario);
+  text-transform: capitalize; /* Mayúscula inicial en el mes */
+}
+
+.calendar-header button {
+  background: white;
+  border: 1px solid #DDE2E7;
+  padding: 0.5rem 1rem;
+  border-radius: var(--borde-radio-input);
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--color-texto-secundario);
+}
+
+.calendar-header button:hover {
+  background: #f0f0f0;
+}
+
+/* LA CUADRÍCULA MÁGICA */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 columnas iguales */
+  gap: 1px; /* Espacio entre celdas */
+  background-color: #EAECEF; /* Color de las líneas del grid */
+  border: 1px solid #EAECEF;
+  border-radius: var(--borde-radio-card);
+  overflow: hidden;
+  grid-column: 1 / -1;
+}
+
+.weekday {
+  background-color: #F8F9FD;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 600;
+  color: var(--color-texto-secundario);
+}
+
+.calendar-day {
+  background-color: white;
+  min-height: 100px; /* Altura de cada celda */
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.calendar-day:hover {
+  background-color: #F0F4FF;
+}
+
+.calendar-day.empty {
+  background-color: #fcfcfc;
+  cursor: default;
+}
+
+.calendar-day.today {
+  background-color: #e3f2fd; /* Azul muy clarito para hoy */
+}
+
+.calendar-day.today .day-number {
+  background-color: var(--color-primario);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.day-number {
+  font-weight: 600;
+  color: var(--color-texto-secundario);
+  align-self: flex-end; /* Número a la derecha */
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+/* Eventos dentro del día */
+.day-events {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.event-dot {
+  background-color: var(--color-primario);
+  color: white;
+  font-size: 0.75rem;
+  padding: 2px 4px;
+  border-radius: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+
+/*ESTILOS DE LA PÁGINA TAREAS */
+
+.tasks-container {
+  grid-column: 1 / -1;
+}
+
+.task-full-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.task-full-item {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: var(--borde-radio-card);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between; /*Separa info del botón*/
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+.task-full-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.task-info h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--color-primario);
+}
+
+.task-info p {
+  margin: 0 0 0.5rem 0;
+  font-weight: 500;
+}
+
+.task-date {
+  font-size: 0.9rem;
+  color: var(--color-texto-secundario);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.file-badge {
+  display: inline-block;
+  background-color: #e3f2fd;
+  color: var(--color-primario);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.upload-btn {
+  background-color: white;
+  border: 2px solid var(--color-primario);
+  color: var(--color-primario);
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--borde-radio-input);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.upload-btn:hover {
+  background-color: var(--color-primario);
+  color: white;
+}

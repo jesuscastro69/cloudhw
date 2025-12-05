@@ -35,9 +35,6 @@ function Navbar() {
           <span>👤</span>
           Hola, {username}
         </div>
-        <div className="nav-icon">
-          <span>🔔</span>
-        </div>
         <button onClick={handleLogout} className="logout-btn">
           Cerrar Sesión
         </button>

@@ -4,6 +4,8 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Dashboard from './pages/Dashboard'
 import MisCursos from './pages/MisCursos'
+import Calendario from './pages/Calendario' 
+import Tareas from './pages/Tareas' 
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
       <Route path="/register" element={<Register />} />
       <Route path="/" element={<Dashboard />} /> 
       <Route path="/cursos" element={<MisCursos />} />
+      <Route path="/calendario" element={<Calendario />} />
+      <Route path="/tareas" element={<Tareas />} />
     </Routes>
   )
 }
